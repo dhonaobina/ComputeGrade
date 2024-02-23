@@ -1,0 +1,60 @@
+table, tr, td {
+    font-weight: 700;
+    padding: 5px 30px 5px 5px;
+    margin: 0px auto;
+    font-size: 18px;
+}
+
+body {
+    background-color: #8080801f;
+}
+
+.main-div {
+    width: 40%;
+    border: 1px solid;
+    margin-top: 58px;
+    background-color: white;
+    margin: 0px auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-content: center;
+}
+
+h2 {
+    font-weight: 700;
+    text-align: center;
+}
+
+input {
+    font-weight: 300;
+    font-size: 16px;
+    background-color: #f2f2f2;
+}
+
+#txtout {
+    text-align: center;
+    margin-left: 90px;
+    width: 70%;
+}
+
+.button {
+    height: 50px;
+    width: 200px;
+    margin: -30px -50px;
+    position: relative;
+    top: 50%;
+    left: 30%;
+    background-color: #cacaca;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 22px;
+    font-size: 18px;
+    margin: 0px auto;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.button2:hover 
+{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
