@@ -12,11 +12,80 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/styles/styles.css">
     </head>
-    <body>
+    <body onload="myFunction();">
         <br>
         <br>
         <h2>Compute Grade</h2>
-        <div class="main-div"></div>
+        <div class="main-div">
+            <table>
+                <tr>
+                    <td>
+                        Student Name
+                    </td>
+                    <td>
+                        <select id="stuName">
+                            <option value="David">David</option>
+                            <option value="John">John</option>
+                            <option value="Michelle">Michelle</option>
+                            <option value="Laura">Laura</option>
+                        </select>
+                    </td>
+                </tr>
+            <tr>
+                    <td>
+                        Subjects
+                    </td>
+                <tr>
+                    <td>
+                        <label class="subcaption">Math</label>
+                    </td>
+                    <td>
+                        <input type="text" name="Math" id="Math" value="30" readonly>
+                    </td>
+                    <td>
+                        <p id="MathResult">Grade C</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="subcaption">English</label>
+                    </td>
+                    <td>
+                        <input type="text" name="Eng" id="English" value="60" readonly>
+                    </td>
+                    <td>
+                        <p id="EngResult">Grade B</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="subcaption">Computer</label>
+                    </td>
+                    <td>
+                        <input type="text" name="Computer" id="Computer" value="50" readonly>
+                    </td>
+                    <td>
+                        <p id="ComputerResult">Grade B</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="subcaption">Science</label>
+                    </td>
+                    <td>
+                        <input type="text" name="Science" id="Science" value="80" readonly>
+                    </td>
+                    <td>
+                        <p id="ScienceResult">Grade A</p>
+                    </td>
+                </tr>
+            </tr>
+            </table>
+            <br>
+            <button class="button button2" type="button" onclick="resultCal()">Compute Grades</button>
+            <br>
+            <p id="txtout"></p>
+        </div>
         <script src="app.js" async defer></script>
     </body>
 </html>
