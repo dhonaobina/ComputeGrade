@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -11,6 +7,7 @@
         <meta name="description" content="Compute Grade">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/styles/styles.css">
+        <script src="app.js" async defer></script>
     </head>
     <body>
         <br>
@@ -40,7 +37,7 @@
                         <label class="subcaption">Math</label>
                     </td>
                     <td>
-                        <input type="text" name="Math" id="Math" value="30" readonly>
+                        <input type="text" name="Math" id="Math" value="80" readonly>
                     </td>
                     <td>
                         <p id="MathResult">Grade C</p>
@@ -62,7 +59,7 @@
                         <label class="subcaption">Computer</label>
                     </td>
                     <td>
-                        <input type="text" name="Computer" id="Computer" value="50" readonly>
+                        <input type="text" name="Computer" id="Computer" value="40" readonly>
                     </td>
                     <td>
                         <p id="ComputerResult">Grade B</p>
@@ -73,7 +70,7 @@
                         <label class="subcaption">Science</label>
                     </td>
                     <td>
-                        <input type="text" name="Science" id="Science" value="80" readonly>
+                        <input type="text" name="Science" id="Science" value="35" readonly>
                     </td>
                     <td>
                         <p id="ScienceResult">Grade A</p>
@@ -85,7 +82,6 @@
             <button class="button button2" type="button" onclick="resultCal()">Compute Grades</button>
             <br>
             <p id="txtout"></p>
-        </div>
-        <script src="app.js" async defer></script>
+        </div>  
     </body>
 </html>
