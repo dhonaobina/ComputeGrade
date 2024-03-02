@@ -15,17 +15,17 @@ function gradCalCulation(Numtag, resultTag)
         document.getElementById(resultTag).style.backgroundColor = "";
         return;
         }
-        else if (parseInt(NumtagVal) == 80)
+        else if (parseInt(NumtagVal) >= 80)
         {
             document.getElementById(resultTag).innerHTML = 'Grade A';
             document.getElementById(resultTag).style.backgroundColor = "#99ff99";
         }
-        else if (parseInt(NumtagVal) == 60)
+        else if (parseInt(NumtagVal) >= 60)
         {
             document.getElementById(resultTag).innerHTML = 'Grade B';
             document.getElementById(resultTag).style.backgroundColor = "#ffff80";
         }
-        else if (parseInt(NumtagVal) == 40)
+        else if (parseInt(NumtagVal) >= 40)
         {
             document.getElementById(resultTag).innerHTML = 'Grade C';
             document.getElementById(resultTag).style.backgroundColor = "#b3ffff";
