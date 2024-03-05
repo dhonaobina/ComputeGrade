@@ -1,47 +1,49 @@
-function resultCal()
-    {
-        gradCalCulation('Math', 'MathResult');
-        gradCalCulation('English', 'EngResult');
-        gradCalCulation('Computer', 'ComputerResult');
-        gradCalCulation('Science', 'ScienceResult');
-        resultDisplay();
-    }
 var flag = 0;
+function resultCal()
+{
+    gradCalCulation('Math', 'MathResult');
+    gradCalCulation('English', 'EngResult');
+    gradCalCulation('Computer', 'ComputerResult');
+    gradCalCulation('Science', 'ScienceResult');
+    resultDisplay();
+}
+
 function gradCalCulation(Numtag, resultTag)
-    {
+{
+
        var NumtagVal = document.getElementById(Numtag).value;
-       if (NumtagVal == '')
-       {
-         document.getElementById(resultTag).innerHTML = 'Enter Marks';
-         document.getElementById(resultTag).style.backgroundColor = "";
-         return;
-       }
-       else if (parseInt(NumtagVal) >= 80 && parseInt(NumtagVal) <= 100)
-       {
-         document.getElementById(resultTag).innerHTML = 'Grade A';
-         document.getElementById(resultTag).style.backgroundColor = "#99ff99";
-       }
-       else if (parseInt(NumtagVal) >= 60 && parseInt(NumtagVal) <80)
-       {
-         document.getElementById(resultTag).innerHTML = 'Grade B';
-         document.getElementById(resultTag).style.backgroundColor = "#ffff80";
-       }
-       else if (parseInt(NumtagVal) >= 40 && parseInt(NumtagVal) < 60)
-       {
-         document.getElementById(resultTag).innerHTML = 'Grade C';
-         document.getElementById(resultTag).style.backgroundColor = "#b3ffff";
-       }
-       else if (parseInt(NumtagVal) > 100 || parseInt(NumtagVal) < 0 )
-       {
-         flag=1;
-         document.getElementById(resultTag).innerHTML = 'Please Check';
-         document.getElementById(resultTag).style.backgroundColor = "#ffd9b3";
-       }
-       else
-       {
-         document.getElementById(resultTag).innerHTML = 'Fail';
-         document.getElementById(resultTag).style.backgroundColor = "#ffb3b3";
-       }
+       var grade;
+       var color;
+       switch (true)
+      {
+      case (NumtagVal == ''):
+        grade = 'Enter Marks';
+        color = "";
+        break;
+       
+      case (parseInt(NumtagVal) >= 80 && parseInt(NumtagVal) <= 100):
+        grade = 'Grade A';
+        color = "#99ff99";
+        break;
+      case (parseInt(NumtagVal) >= 60 && parseInt(NumtagVal) <80):
+        grade = 'Grade B';
+        color = "#ffff80";
+        break;
+      case (parseInt(NumtagVal) >= 40 && parseInt(NumtagVal) < 60):
+        grade = 'Grade C';
+        color = "#b3ffff";
+        break;
+      case (parseInt(NumtagVal) > 100 || parseInt(NumtagVal) < 0 ):
+        flag=1;
+        grade = 'Please Check';
+        color = "#ffd9b3";
+        break;
+      default:
+        grade = 'Fail';
+        color = "#ffb3b3";
+      }
+      document.getElementById('txtout').innerHTML = grade;
+      document.getElementById('txtout').style.backgroundColor = color;
 }
 function resultDisplay()
 {
