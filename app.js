@@ -7,20 +7,17 @@ function resultCal()
     gradCalCulation('Science', 'ScienceResult');
     resultDisplay();
 }
-
 function gradCalCulation(Numtag, resultTag)
 {
-
-       var NumtagVal = document.getElementById(Numtag).value;
-       var grade;
-       var color;
-       switch (true)
+    var NumtagVal = document.getElementById(Numtag).value;
+    var grade;
+    var color;
+    switch (true)
       {
       case (NumtagVal == ''):
         grade = 'Enter Marks';
         color = "";
         break;
-       
       case (parseInt(NumtagVal) >= 80 && parseInt(NumtagVal) <= 100):
         grade = 'Grade A';
         color = "#99ff99";
@@ -34,7 +31,7 @@ function gradCalCulation(Numtag, resultTag)
         color = "#b3ffff";
         break;
       case (parseInt(NumtagVal) > 100 || parseInt(NumtagVal) < 0 ):
-        flag=1;
+        flag = 1;
         grade = 'Please Check';
         color = "#ffd9b3";
         break;
@@ -42,9 +39,10 @@ function gradCalCulation(Numtag, resultTag)
         grade = 'Fail';
         color = "#ffb3b3";
       }
-      document.getElementById('txtout').innerHTML = grade;
-      document.getElementById('txtout').style.backgroundColor = color;
+      document.getElementById(resultTag).innerHTML = grade;
+      document.getElementById(resultTag).style.backgroundColor = color;
 }
+
 function resultDisplay()
 {
     var stuName = document.getElementById("stuName").value;
