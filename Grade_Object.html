@@ -1,100 +1,217 @@
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Compute Grade | CodeGlimpse</title>
-        <meta name="description" content="Compute Grade">
+        <title>Display Grades | CodeGlimpse</title>
+        <meta name="description" content="Display Grades">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/styles/styles.css">
-        <script src="app.js" async defer></script>
     </head>
-    <body>
-        <br>
-        <br>
-        <h2>Compute Grade</h2>
-        <div class="main-div">
-            <table>
-                <tr>
-                    <td>
-                        Student Name
-                    </td>
-                    <td>
-                        <select style="font-size: 16px;" style="width: 172px;" id="stuName">
-                            <option value="David" width="">David</option>
-                            <option value="John">John</option>
-                            <option value="Michelle">Michelle</option>
-                            <option value="Laura">Laura</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button class="button button2" type="button">
-                            Display Marks </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Subjects
-                    </td>
-                    <tr>
-                    <td>
-                        <label class="subcaption">
-                            Math</label>
-                    </td>
-                    <td>
-                        <p class = "para" id="Math"  ></p>
-                    </td>
-                    <td>
-                        <p class = "grade">
-                            </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class="subcaption">
-                            English</label>
-                    </td>
-                    <td>
-                        <p class = "para" id="English" ></p>
-                    </td>
-                    <td>
-                        <p class = "grade">
-                            </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class="subcaption">
-                            Computer</label>
-                    </td>
-                    <td>
-                        <p class = "para" id="Computer" ></p>
-                    </td>
-                    <td>
-                        <p class = "grade">
-                            </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class="subcaption">
-                            Science</label>
-                    </td>
-                    <td>
-                        <p class = "para" id="Science"  ></p>
-                    </td>
-                    <td>
-                        <p class = "grade">
-                            </p>
-                    </td>
-                </tr>
+<body>
+    <br>
+    <br>
+    <h2>Display Grades</h2>
+    <div class="main-div">
+        <table>
+            <tr>
+                <td>
+                    Student Name
+                </td>
+                <td>
+                    <select style="font-size: 16px;" style="width: 172px;" id="stuName">
+                        <option value="David" width="">David</option>
+                        <option value="John">John</option>
+                        <option value="Michelle">Michelle</option>
+                        <option value="Laura">Laura</option>
+                    </select>
+                </td>
+                <td>
+                    <button class="button button2" type="button" onclick="displayMarks()">
+                        Display Marks </button>
+                </td>
             </tr>
-            </table>
-            <br>
-            <button class="button button2" type="button">
-                Compute Grades</button>
-            <br>
-            <p id="txtout"></p>
-        </div>
+            <tr>
+                <td>
+                    Subjects
+                </td>
+                <tr>
+                <td>
+                    <label class="subcaption">
+                        Math</label>
+                </td>
+                <td>
+                    <p class="para" id="Math"></p>
+                </td>
+                <td>
+                    <p class="grade">
+                        </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="subcaption">
+                        English</label>
+                </td>
+                <td>
+                    <p class="para" id="English"></p>
+                </td>
+                <td>
+                    <p class="grade">
+                        </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="subcaption">
+                        Computer</label>
+                </td>
+                <td>
+                    <p class="para" id="Computer"></p>
+                </td>
+                <td>
+                    <p class="grade">
+                        </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="subcaption">
+                        Science</label>
+                </td>
+                <td>
+                    <p class="para" id="Science"></p>
+                </td>
+                <td>
+                    <p class="grade">
+                        </p>
+                </td>
+            </tr>
+        </tr>
+        </table>
+        <br>
+        <button class="button button2" type="button" onclick="resultDisplay()">
+            Compute Grades</button>
+        <br>
+        <p id="txtout"></p>
+    </div>
+    <script>
+        /*var marksDavid = {
+            Math:"95",
+            English:"75",
+            Computer:"60",
+            Science:"80"
+            };
+        var marksJohn = {
+            Math:"70",
+            English:"60",
+            Computer:"50",
+            Science:"40",
+            };
+        var marksMichelle = {
+            Math:"65",
+            English:"55",
+            Computer:"35",
+            Science:"45",
+            };
+        var marksLaura = {
+            Math: "90",
+            English: "90",
+            Computer: "75",
+            Science: "80",
+            };*/
+    function studentMarks (m1, m2, m3, m4)
+            {
+                this.Math = m1;
+                this.English = m2;
+                this.Computer = m3;
+                this.Science = m4;
+            }
+            let marksDavid = new studentMarks (95, 75, 60, 80);
+            let marksJohn = new studentMarks (70, 60, 50, 40);
+            let marksMichelle = new studentMarks (65,55,35,45);
+            let marksLaura = new studentMarks (90, 90, 75, 80);
+
+    function displayMarks()
+        {
+            var stuName = document.getElementById("stuName").value;
+            if (stuName == "David")
+            {
+                document.getElementById("Math").innerHTML = marksDavid.Math;
+                document.getElementById("English").innerHTML = marksDavid.English;
+                document.getElementById("Computer").innerHTML = marksDavid.Computer;
+                document.getElementById("Science").innerHTML = marksDavid.Science;
+            }
+            else if(stuName == "John")
+            {
+                document.getElementById("Math").innerHTML = marksJohn.Math;
+                document.getElementById("English").innerHTML = marksJohn.English;
+                document.getElementById("Computer").innerHTML = marksJohn.Computer;
+                document.getElementById("Science").innerHTML = marksJohn.Science;
+            }
+            else if(stuName == "Michelle")
+            {
+                document.getElementById("Math").innerHTML = marksMichelle.Math;
+                document.getElementById("English").innerHTML = marksMichelle.English;
+                document.getElementById("Computer").innerHTML = marksMichelle.Computer;
+                document.getElementById("Science").innerHTML = marksMichelle.Science;
+            }
+            else
+            {
+                document.getElementById("Math").innerHTML = marksLaura.Math;
+                document.getElementById("English").innerHTML = marksLaura.English;
+                document.getElementById("Computer").innerHTML = marksLaura.Computer;
+                document.getElementById("Science").innerHTML = marksLaura.Science;
+            }
+        }
+    function resultDisplay()
+        {
+            var stuName = document.getElementById("stuName").value;
+            var result = parseInt(document.getElementById("Math").innerHTML)
+            + parseInt(document.getElementById("English").innerHTML)
+            + parseInt(document.getElementById("Computer").innerHTML)
+            + parseInt(document.getElementById("Science").innerHTML);
+            if (!result)
+            {    
+                document.getElementById('txtout').innerHTML = "Please enter marks for all subjects.";
+                document.getElementById('txtout').style.backgroundColor = "#ffd9b3";
+                return;  
+            }
+            else
+            {
+                document.getElementById('txtout').innerHTML = stuName + " has scored " + result + " marks out of 400.";
+                document.getElementById('txtout').style.backgroundColor = "#ffd9b3";
+                var marks = document.getElementsByClassName("para");
+                var sub = document.getElementsByClassName("grade");
+                for (var i in marks)
+                {
+                    if(marks[i].innerHTML < 0 || marks[i].innerHTML > 100)
+                    {
+                        document.getElementById('txtout').innerHTML = 'Please enter marks between 0 and 100 for all subjects.';
+                        document.getElementById('txtout').style.backgroundColor = "#ffd9b3";
+                    }
+                    else if(marks[i].innerHTML >= 80 && marks[i].innerHTML <= 100)
+                    {
+                        sub[i].innerHTML = 'Grade A';
+                        sub[i].style.backgroundColor = "#99ff99";
+                    }
+                    else if (marks[i].innerHTML >= 60 && marks[i].innerHTML < 80)
+                    {
+                        sub[i].innerHTML = 'Grade B';
+                        sub[i].style.backgroundColor = "#ffff80";
+                    }
+                    else if (marks[i].innerHTML >= 40 && marks[i].innerHTML < 60)
+                    {
+                        sub[i].innerHTML = 'Grade C';
+                        sub[i].style.backgroundColor = "#b3ffff";
+                    }
+                    else
+                    {
+                        sub[i].innerHTML = 'Fail';
+                        sub[i].style.backgroundColor = "#ffb3b3";
+                    }
+                }
+            }
+        }       
+        </script>
     </body>
 </html>
